@@ -5,6 +5,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import BestsellersPin from "@/components/BestsellersPin";
 import CallButton from "@/components/CallButton";
 import TiltCard from "@/components/TiltCard";
+import FoodPattern from "@/components/FoodPattern";
 import { menu, testimonials } from "@/lib/site-config";
 
 export default function HomePage() {
@@ -12,7 +13,7 @@ export default function HomePage() {
 
   return (
     <div>
-      <Hero />
+      <Hero eyebrow="Gulberg, Lahore — Est. 10+ Years" heading="Fresh. Fast. Unforgettable." />
 
       <Marquee
         items={["Flame-Grilled Daily", "Fast Delivery", "86,000+ Fans", "Order Now"]}
@@ -26,9 +27,9 @@ export default function HomePage() {
           { icon: Truck, title: "Fast Delivery", desc: "Order by phone or WhatsApp and get it hot, right to your door." },
           { icon: ThumbsUp, title: "86,000+ Happy Fans", desc: "A decade of loyal customers across Gulberg and beyond." },
         ].map((item) => (
-          <TiltCard key={item.title} className="rounded-2xl border border-black/5 bg-white p-7 shadow-sm">
-            <item.icon className="h-8 w-8 text-brand-500" />
-            <p className="mt-4 font-display text-lg font-semibold text-ink-900">{item.title}</p>
+          <TiltCard key={item.title} className="rounded-2xl border-2 border-brand-100 bg-white p-7 shadow-sm">
+            <item.icon className="h-9 w-9 text-brand-500" />
+            <p className="mt-4 font-display text-lg font-extrabold uppercase text-ink-900">{item.title}</p>
             <p className="mt-2 text-sm text-ink-800/60">{item.desc}</p>
           </TiltCard>
         ))}
@@ -55,16 +56,17 @@ export default function HomePage() {
       </ScrollReveal>
 
       {/* CTA */}
-      <section className="relative overflow-hidden bg-ink-900 py-24 text-center text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-brand-500 to-brand-700 py-24 text-center text-white">
+        <FoodPattern className="text-white" />
         <div className="container-page relative z-10">
-          <h2 className="font-display text-4xl font-bold uppercase tracking-tight sm:text-6xl">
+          <h2 className="font-display text-4xl font-extrabold uppercase tracking-tight drop-shadow-[0_4px_0_rgba(0,0,0,0.15)] sm:text-6xl">
             Hungry? We&apos;re a Call Away.
           </h2>
-          <p className="mx-auto mt-4 max-w-lg text-white/60">
+          <p className="mx-auto mt-4 max-w-lg font-medium text-white/90">
             Order now for pickup or delivery — fresh, fast, and always satisfying.
           </p>
           <div className="mt-10 flex justify-center gap-4">
-            <CallButton className="bg-white !text-brand-600 hover:!bg-brand-50 px-8 py-4 text-base" />
+            <CallButton className="!bg-white !text-brand-600 px-8 py-4 text-base shadow-lg hover:!bg-white/90" />
           </div>
         </div>
       </section>

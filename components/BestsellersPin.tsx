@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, UtensilsCrossed } from "lucide-react";
 import TiltCard from "./TiltCard";
 import type { MenuItem } from "@/lib/site-config";
 
@@ -43,13 +43,13 @@ export default function BestsellersPin({ items }: { items: MenuItem[] }) {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-ink-900 py-20 text-white">
+    <section ref={sectionRef} className="relative overflow-hidden border-y-4 border-brand-500 bg-white py-20">
       <div className="container-page mb-10 flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand-400">Fan Favorites</p>
-          <h2 className="mt-2 font-display text-3xl font-bold sm:text-5xl">Bestselling Burgers</h2>
+          <p className="text-sm font-extrabold uppercase tracking-widest text-brand-600">Fan Favorites</p>
+          <h2 className="mt-2 font-display text-3xl font-extrabold uppercase text-ink-900 sm:text-5xl">Bestselling Burgers</h2>
         </div>
-        <Link href="/menu" className="inline-flex items-center gap-2 text-sm font-semibold text-brand-400 hover:text-brand-300">
+        <Link href="/menu" className="inline-flex items-center gap-2 rounded-full bg-brand-500 px-5 py-2.5 text-sm font-bold text-white hover:bg-brand-600">
           Full Menu <ArrowRight className="h-4 w-4" />
         </Link>
       </div>
@@ -60,21 +60,21 @@ export default function BestsellersPin({ items }: { items: MenuItem[] }) {
             <TiltCard
               key={item.name}
               wrapperClassName="w-[78vw] shrink-0 sm:w-[46vw] lg:w-[30vw]"
-              className="rounded-2xl bg-white/5 p-8"
+              className="rounded-2xl border-[3px] border-brand-300 bg-white p-6 shadow-md"
             >
-              <div className="mb-5 flex h-48 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500/30 to-brand-700/30 text-xs text-white/50">
-                Food photo placeholder
+              <div className="mb-5 flex h-44 items-center justify-center rounded-xl border-2 border-dashed border-brand-200 bg-brand-50 text-brand-400">
+                <UtensilsCrossed className="h-10 w-10" />
               </div>
-              <p className="font-display text-xl font-semibold">{item.name}</p>
-              <p className="mt-2 text-sm text-white/60">{item.description}</p>
-              <p className="mt-4 font-display text-lg text-brand-400">{item.price}</p>
+              <p className="font-display text-lg font-extrabold uppercase text-ink-900">{item.name}</p>
+              <p className="mt-2 text-sm text-ink-800/60">{item.description}</p>
+              <p className="mt-4 font-display text-xl font-extrabold text-brand-600">{item.price}</p>
             </TiltCard>
           ))}
           <div className="flex w-[78vw] shrink-0 flex-col items-start justify-center gap-4 sm:w-[46vw] lg:w-[30vw]">
-            <p className="font-display text-2xl font-bold">Hungry for more?</p>
+            <p className="font-display text-2xl font-extrabold uppercase text-ink-900">Hungry for more?</p>
             <Link
               href="/menu"
-              className="inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-600"
+              className="inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-sm font-bold text-white hover:bg-brand-600"
             >
               See Full Menu <ArrowRight className="h-4 w-4" />
             </Link>
