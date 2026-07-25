@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SmoothScroll from "@/components/SmoothScroll";
+import CustomCursor from "@/components/CustomCursor";
 import { siteConfig } from "@/lib/site-config";
 import { restaurantSchema } from "@/lib/schema";
 
@@ -27,7 +29,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: ["Papa Jee's", "burgers Lahore", "fast food Gulberg", "best burgers Lahore", "food delivery Lahore"],
+  keywords: [siteConfig.name, "burgers Lahore", "fast food Gulberg", "best burgers Lahore", "food delivery Lahore"],
   openGraph: {
     title: `${siteConfig.name} — ${siteConfig.tagline}`,
     description: siteConfig.description,
@@ -56,9 +58,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantSchema()) }}
         />
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <CustomCursor />
+        <SmoothScroll>
+          <Header />
+          <main className="pt-16">{children}</main>
+          <Footer />
+        </SmoothScroll>
         <WhatsAppButton />
       </body>
     </html>
