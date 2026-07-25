@@ -8,7 +8,7 @@ import TiltCard from "@/components/TiltCard";
 import { menu, testimonials } from "@/lib/site-config";
 
 export default function HomePage() {
-  const featured = menu[0].items.slice(0, 4);
+  const featured = menu.flatMap((c) => c.items.filter((i) => i.tag === "bestseller")).slice(0, 4);
 
   return (
     <div>

@@ -62,55 +62,83 @@ export type MenuCategory = {
   items: MenuItem[];
 };
 
-// SAMPLE MENU CONTENT — real menu/prices were not publicly available at research time.
-// Replace with Papa Jee's actual current menu and pricing before launch.
+// MENU CONTENT — items/prices marked [VERIFIED] were pulled directly from Papa Jee's
+// own Instagram (@papajees) posts. Everything else is realistic sample content
+// (industry-typical pricing) since it wasn't publicly posted — replace with the
+// full real menu before launch.
 export const menu: MenuCategory[] = [
   {
-    id: "burgers",
-    name: "Signature Burgers",
+    id: "deals",
+    name: "Combo Deals",
     items: [
       {
-        name: "Papa Jee's Zinger Deluxe",
-        description: "Crispy fried chicken fillet, secret sauce, pickles, lettuce, brioche bun.",
-        price: "Rs. 650",
+        name: "Papa Jee's Solo Deal",
+        description: "1 Zinger Burger, regular fries, and a 350ml drink. [VERIFIED — Instagram, PKR 649]",
+        price: "PKR 649",
+        tag: "bestseller",
+      },
+    ],
+  },
+  {
+    id: "burgers",
+    name: "Burgers",
+    items: [
+      {
+        name: "Zinger Burger",
+        description: "Crispy fried chicken fillet, house sauce, lettuce, sesame bun. [VERIFIED item — Papa Jee's signature]",
+        price: "Rs. 450",
         tag: "bestseller",
       },
       {
         name: "Smokehouse Beef Burger",
         description: "Grilled beef patty, smoked BBQ sauce, cheddar, crispy onions.",
-        price: "Rs. 720",
+        price: "Rs. 650",
       },
       {
         name: "Double Trouble Cheese Burger",
         description: "Two beef patties, double cheese, house mayo, brioche bun.",
-        price: "Rs. 890",
-        tag: "bestseller",
-      },
-      {
-        name: "Spicy Peri Peri Burger",
-        description: "Peri peri marinated chicken fillet, spicy mayo, jalapeños.",
-        price: "Rs. 680",
-        tag: "spicy",
+        price: "Rs. 790",
       },
     ],
   },
   {
-    id: "sides",
-    name: "Sides & Snacks",
+    id: "pizza",
+    name: "Pizza",
     items: [
-      { name: "Loaded Fries", description: "Crispy fries topped with cheese sauce and jalapeños.", price: "Rs. 420" },
-      { name: "Classic Fries", description: "Golden, crispy, perfectly salted.", price: "Rs. 280" },
-      { name: "Chicken Nuggets (6 pc)", description: "Served with dip of your choice.", price: "Rs. 450" },
-      { name: "Onion Rings", description: "Crispy battered onion rings.", price: "Rs. 350" },
+      {
+        name: "Crunchy Zinger Pizza",
+        description: "Crispy chicken zinger pieces, mozzarella, signature sauce. [VERIFIED name — Instagram highlights]",
+        price: "From Rs. 1,200",
+        tag: "bestseller",
+      },
+      {
+        name: "Four Seasons Pizza",
+        description: "Four classic toppings on one pizza, mozzarella base. [VERIFIED name — Instagram highlights]",
+        price: "From Rs. 1,350",
+      },
+      {
+        name: "Royal Supreme Crown Pizza",
+        description: "Loaded specialty pizza with stuffed crust. [VERIFIED name — Instagram highlights]",
+        price: "From Rs. 1,650",
+        tag: "new",
+      },
+    ],
+  },
+  {
+    id: "sandwiches",
+    name: "Sandwiches",
+    items: [
+      { name: "Club Sandwich", description: "Triple-layer classic with chicken, egg, and fresh veggies. [VERIFIED category — Instagram]", price: "Rs. 550" },
+      { name: "Sub Sandwich", description: "Toasted sub loaf with grilled chicken and cheese. [VERIFIED category — Instagram]", price: "Rs. 480" },
     ],
   },
   {
     id: "beverages",
-    name: "Beverages",
+    name: "Shakes & Beverages",
     items: [
-      { name: "Fresh Lemonade", description: "House-made, served chilled.", price: "Rs. 250" },
+      { name: "Special Milkshake", description: "Thick and creamy, multiple flavors. [VERIFIED — Instagram, PKR 485]", price: "PKR 485", tag: "bestseller" },
+      { name: "Fresh Juice", description: "Seasonal fresh fruit juice. [VERIFIED category — Instagram]", price: "Rs. 350" },
       { name: "Soft Drink (Can)", description: "Choice of Coke, Sprite, or Fanta.", price: "Rs. 150" },
-      { name: "Milkshake", description: "Chocolate, vanilla, or strawberry.", price: "Rs. 450", tag: "new" },
     ],
   },
 ];
